@@ -4,3 +4,4 @@ manage.py
 .vscode
 FormAndTable/__pycache__
 form/__pycache__
+form/migrations/__pycache__
