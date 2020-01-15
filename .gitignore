@@ -5,3 +5,4 @@ manage.py
 FormAndTable/__pycache__
 form/__pycache__
 form/migrations/__pycache__
+media/collectstatic

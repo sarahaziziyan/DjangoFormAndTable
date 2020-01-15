@@ -8,7 +8,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'as(p*h8t98pv&!5xt)m=k#gckhujvd)x!1s(==!g!h+cl32nil'
+SECRET_KEY = '0215+sp7fi17y)t#93+kvj7tuxwc&)kcxax_bi-ytu)0@uo#am'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -25,7 +25,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'form',
+    'form'
 ]
 
 MIDDLEWARE = [
@@ -38,12 +38,12 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'FormAndTable.urls'
+ROOT_URLCONF = 'kernel.urls'
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, "media/templates")],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -56,7 +56,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'FormAndTable.wsgi.application'
+WSGI_APPLICATION = 'kernel.wsgi.application'
 
 
 # Database
@@ -107,3 +107,14 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+MEDIA_URL = '/media/'
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/upload/')
+
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'media/static/'),
+
+)
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'media/collectstatic')
