@@ -1,0 +1,6 @@
+venv/*
+*.sqlite3
+manage.py
+.vscode
+FormAndTable/__pycache__
+form/__pycache__
