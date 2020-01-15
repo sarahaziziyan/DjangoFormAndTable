@@ -2,13 +2,17 @@
     <table class="table">
         <thead class="thead-dark">
             <tr>
+                <th scope="col">Title</th>
                 <th scope="col">First Name</th>
-                <th scope="col">Last Name</th>
+                <th scope="col">Last Name</th>                
+                <th scope="col">Date of Birth</th>
             </tr>
         </thead>
         <tr>
+            <td>{{ table.title }}</td>
             <td>{{ table.first_name }}</td>
             <td>{{ table.last_name }}</td>
+            <td>{{ table.date_of_birth }}</td>
         </tr>
     </table>
 </div>
