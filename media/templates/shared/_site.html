@@ -12,8 +12,9 @@
     {% endblock %}
 </head>
 <body>
+    {% include 'shared/navbar.html' %}
     {% comment %} <h1>This is the template</h1> {% endcomment %}
-    {% block body %}
+    {% block body %}        
     {% endblock %}
     
     <script src="{% static 'js/main.js' %}"></script>
