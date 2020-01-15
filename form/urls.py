@@ -1,7 +1,12 @@
-from django.contrib import admin
-from django.urls import path
+from django.urls import path, re_path, include
 from . import views
 
+
+app_name='form'
 urlpatterns = [
-    path('', views.sayHello, name='index'),
+    re_path(r'^$', views.HelloView.as_view(), name='index'),
+    re_path(r'^form/$', views.showForm.as_view(), name='form')
 ]
+
+
+#{% url 'ticket:index' %}
