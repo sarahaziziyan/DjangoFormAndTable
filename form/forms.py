@@ -6,7 +6,7 @@ class MyForm(forms.Form):
     first_name = forms.CharField(
         label='First Name',
         max_length=50,
-        widget=forms.TextInput(attrs={'class': "form-control"})\
+        widget=forms.TextInput(attrs={'class': "form-control"})
     )                                
     last_name = forms.CharField(
         label='Last Name',
@@ -24,3 +24,11 @@ class MyForm(forms.Form):
         widget=forms.RadioSelect, 
         choices=GenderChoices
     )
+
+# class PersonalForm(forms.Form):
+#     name = forms.CharField(max_length=100)
+#     title = forms.CharField(
+#         max_length=3,
+#         widget=forms.Select(choices=TITLE_CHOICES),
+#     )
+#     birth_date = forms.DateField(required=False)
