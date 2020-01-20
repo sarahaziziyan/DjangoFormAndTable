@@ -8,11 +8,13 @@
                 <th scope="col">Date of Birth</th>
             </tr>
         </thead>
+        {% for personalInfo in personalInfos %}  
         <tr>
-            <td>{{ table.title }}</td>
-            <td>{{ table.first_name }}</td>
-            <td>{{ table.last_name }}</td>
-            <td>{{ table.date_of_birth }}</td>
+            <td>{{ personalInfo.title }}</td>
+            <td>{{ personalInfo.first_name }}</td>
+            <td>{{ personalInfo.last_name }}</td>
+            <td>{{ personalInfo.date_of_birth }}</td>
         </tr>
+        {% endfor %}  
     </table>
 </div>

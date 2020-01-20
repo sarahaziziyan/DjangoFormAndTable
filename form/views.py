@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.views.generic import View
-from .forms import MyForm
+from .forms import MyForm, PersonalForm
+from .models import PersonalInfo
 
 class HelloView(View):
     def get(self, request, *args, **kwargs):
@@ -30,3 +31,19 @@ def personalformRender(request):
                 'date_of_birth':date_of_birth
             }
     return render(request, 'form.html', {'form':form, 'table':table});
+
+def saveAndShowPersonel(request):
+    personalInfos = {}
+    if request.method == "POST":
+        form = PersonalForm(request.POST)
+        if form.is_valid():
+            try:
+                form.save()
+                personalInfos = PersonalInfo.objects.all()
+                return render(request,"form.html",{'form':form, 'personalInfos':personalInfos})
+            except:
+                pass
+    else:
+        form = PersonalForm()
+        personalInfos = PersonalInfo.objects.all()
+    return render(request,"form.html",{'form':form, 'personalInfos':personalInfos})

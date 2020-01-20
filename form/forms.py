@@ -1,5 +1,5 @@
-
 from django import forms
+from .models import PersonalInfo  
 import datetime
 
 class MyForm(forms.Form):
@@ -25,10 +25,14 @@ class MyForm(forms.Form):
         choices=GenderChoices
     )
 
-# class PersonalForm(forms.Form):
-#     name = forms.CharField(max_length=100)
-#     title = forms.CharField(
-#         max_length=3,
-#         widget=forms.Select(choices=TITLE_CHOICES),
-#     )
-#     birth_date = forms.DateField(required=False)
+
+class PersonalForm(forms.ModelForm):  
+    class Meta:  
+        model = PersonalInfo  
+        fields = "__all__"  
+        widgets = {
+            'first_name': forms.TextInput(attrs={'class': "form-control"}),
+            'last_name': forms.TextInput(attrs={'class': "form-control"}),
+            'date_of_birth': forms.TextInput(attrs={'class': "form-control"}),
+            'gender': forms.RadioSelect,
+        }
