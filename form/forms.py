@@ -35,4 +35,5 @@ class PersonalForm(forms.ModelForm):
             'last_name': forms.TextInput(attrs={'class': "form-control"}),
             'date_of_birth': forms.TextInput(attrs={'class': "form-control"}),
             'gender': forms.RadioSelect,
+            'nationalCode': forms.TextInput(attrs={'class': "form-control"}),
         }
