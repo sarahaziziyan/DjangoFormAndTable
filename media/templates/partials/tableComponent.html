@@ -10,10 +10,16 @@
         </thead>
         {% for personalInfo in personalInfos %}  
         <tr>
-            <td>{{ personalInfo.title }}</td>
+            {% if personalInfo.gender == 'M'%}
+                <td>Mr.</td>
+            {% elif personalInfo.gender == 'F' %}
+                <td>Ms.</td>
+            {% endif %}
+
             <td>{{ personalInfo.first_name }}</td>
             <td>{{ personalInfo.last_name }}</td>
             <td>{{ personalInfo.date_of_birth }}</td>
+            <td>{{ personalInfo.nationalCode }}</td>
         </tr>
         {% endfor %}  
     </table>
